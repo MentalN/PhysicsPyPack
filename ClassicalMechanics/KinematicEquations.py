@@ -12,12 +12,14 @@ class Distance:
         else:
             print('invalid input!')
             Distance.Switch()
+
     def DistanceFinal1(self):
         distance_i = float(input('Initial distance > '))
         velocity_i = float(input('Initial Velocity > '))
         time       = float(input('Change in Time   > '))
         distance_f = distance_i + velocity_i*time
         print('Final distance = ', distance_f)
+
     def DistanceFinal2(self):
         distance_i    = float(input('Initial distance > '))
         velocity_i    = float(input('Initial Velocity > '))
@@ -25,6 +27,10 @@ class Distance:
         acceleration  = float(input('Acceleration     > '))
         distance_f    = distance_i + velocity_i*time + 0.5*acceleration*time*time
         print('Final distance = ', distance_f)
+
+    def DistanceFinal2Return(self, di, vi, t, a):
+        distance_f    = di + vi*t + 0.5*a*t*t
+        return distance_f
 
 
 class Velocity:
@@ -38,12 +44,18 @@ class Velocity:
         else:
             print('invalid input!')
             Velocity.Switch()
+
     def VelocityFinal1(self):
         velocity_i   = float(input('Initial Velocity > '))
         acceleration = float(input('Acceleration     > '))
         time         = float(input('Change in Time   > '))
         velocity_f   = velocity_i + acceleration*time
         print('Final velocity = ', velocity_f)
+
+    def VelocityFinal1Return(self, vi, a, t):
+        velocity_f   = vi + a*t
+        return velocity_f
+
     def VelocityFinal2(self):
         displacement = float(input('Displacement > '))
         velocity_i   = float(input('Initial Velocity > '))
