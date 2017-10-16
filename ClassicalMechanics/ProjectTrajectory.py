@@ -1,4 +1,5 @@
 import math
+from prettytable import PrettyTable
 
 
 class Projectile:
@@ -6,30 +7,24 @@ class Projectile:
     gravity = 9.81
 
     def TrajectoryNoFloor(self, time, vo, azimuth, elevation, xo, yo, zo):
-        print('Time (s)        x-location (m)        y-location        z-location')
+        table = PrettyTable(['Time (s)', 'x-location (m)', 'y-location (m)', 'z-location (m)'])
         for t in range(time+1):
             x = vo * math.cos(math.radians(azimuth)) * math.cos(math.radians(elevation)) * t + xo
             y = vo * math.sin(math.radians(azimuth)) * math.cos(math.radians(elevation)) * t + yo
             z = vo * math.sin(math.radians(elevation)) * t - 0.5 * Projectile.gravity * t * t + zo
-            print(t, end='')
-            print("               %.2f" %x, end='')
-            print("                  %.2f" %y, end='')
-            print("                %.2f" %z)
-        print("_________________________________________________________")
+            table.add_row([t, "%.2f" % x, "%.2f" % y, "%.2f" % z])
+        print(table)
 
     def TrajectoryFloor(self, time, vo, azimuth, elevation, xo, yo, zo):
-        print('Time (s)        x-location (m)        y-location        z-location')
+        table = PrettyTable(['Time (s)', 'x-location (m)', 'y-location (m)', 'z-location (m)'])
         for t in range(time+1):
             x = vo * math.cos(math.radians(azimuth)) * math.cos(math.radians(elevation)) * t + xo
             y = vo * math.sin(math.radians(azimuth)) * math.cos(math.radians(elevation)) * t + yo
             z = vo * math.sin(math.radians(elevation)) * t - 0.5 * Projectile.gravity * t * t + zo
-            print(t, end='')
-            print("               %.2f" %x, end='')
-            print("                  %.2f" %y, end='')
-            print("                %.2f" %z)
+            table.add_row([t, "%.2f" % x, "%.2f" % y, "%.2f" % z])
             if z < 0:
                 break
-        print("________________________Floor_______________________________")
+        print(table)
 
 
 n_projectile = int(input('Number of projectiles > '))
