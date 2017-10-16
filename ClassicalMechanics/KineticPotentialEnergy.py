@@ -1,4 +1,5 @@
 import math
+import itertools
 from KinematicEquations import Velocity, Distance
 from prettytable import PrettyTable
 
@@ -9,7 +10,7 @@ class KineticPotentialEnergy:
         m  = float(input("Object's mass > "))
         hi = float(input("Object's initial height > "))
         table = PrettyTable(['Time (s)', 'Height(m)', 'Potential Energy(J)', 'Velocity(m/s)', 'Kinetic Energy(J)'])
-        for t in range(0, 15):
+        for t in itertools.count():
             h  = hi - Distance.DistanceFinal2Return(Distance(), 0, 0, t, 9.81)
             if h <= 0:
                 tf = math.sqrt(2*hi/9.81)
