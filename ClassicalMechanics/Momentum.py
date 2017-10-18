@@ -3,7 +3,7 @@ import numpy
 
 class LinearMomentum:
     num_p = 0
-#   Actual number of momentum instances is num_p+1
+#   Actual number of momentum instances is "num_p - 1" when calling them form the list p
     p = []
 
     def p_magnitude(self):
@@ -16,6 +16,7 @@ class LinearMomentum:
         if store == 'y':
             LinearMomentum.p.append(p_mag)
             LinearMomentum.num_p += 1
+            print("Momentum instance stored as number:", (LinearMomentum.num_p))
 
     def p_vector(self):
         m  = float(input("Mass of the object > "))
@@ -29,5 +30,10 @@ class LinearMomentum:
         if store == 'y':
             LinearMomentum.p.append(p_vec)
             LinearMomentum.num_p += 1
+            print("Momentum instance stored as number:", (LinearMomentum.num_p))
 
-    
+    def collision_final_velocity(self):
+        switch = input("Use stored momenta (y/n) ? ")
+
+
+LinearMomentum.p_magnitude(LinearMomentum())
