@@ -101,4 +101,18 @@ def menu():
     print("[3] - Linear momentum final velocity")
     print("[4] - Angular momentum magnitude")
     print("[5] - Angular momentum vector")
+    select = int(input("Select a computation > "))
+    if select == 1:
+        LinearMomentum.p_magnitude(LinearMomentum())
+    elif select == 2:
+        LinearMomentum.p_vector(LinearMomentum())
+    elif select == 3:
+        LinearMomentum.collision_final_velocity(LinearMomentum())
+    elif select == 4:
+        AngularMomentum.L_magnitude(AngularMomentum())
+    elif select == 5:
+        AngularMomentum.L_vector(AngularMomentum())
+    menu()
 
+
+menu()
