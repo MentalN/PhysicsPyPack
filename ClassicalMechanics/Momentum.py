@@ -1,6 +1,7 @@
 import numpy
 import math
 
+
 class LinearMomentum:
     p = []
 
@@ -14,6 +15,7 @@ class LinearMomentum:
         if store == 'y':
             LinearMomentum.p.append(p_mag)
             print("Momentum instance stored as number:", len(LinearMomentum.p))
+        return p_mag
 
     def p_vector(self):
         print("Momentum vector")
@@ -28,6 +30,7 @@ class LinearMomentum:
         if store == 'y':
             LinearMomentum.p.append(p_vec)
             print("Momentum instance stored as number:", len(LinearMomentum.p))
+        return p_vec
 
     def collision_final_velocity(self):
         switch = input("Use stored momenta (y/n) ? ")
@@ -48,6 +51,7 @@ class LinearMomentum:
         vf_1 = float(input("Velocity of the first object after collision > "))
         vf_2 = (m1 * vi_1 + m2 * vi_2 - m1 * vf_1)/m2
         print("Velocity of the second object after collision vf2 = ", "%.2f" % vf_2)
+        return vf_2
 
 
 class AngularMomentum(LinearMomentum):
@@ -69,6 +73,7 @@ class AngularMomentum(LinearMomentum):
         if store == 'y':
             LinearMomentum.p.append(L_mag)
             print("Momentum instance stored as number:", len(LinearMomentum.p))
+        return L_mag
 
     def L_vector(self):
         switch = input("Use stored momenta (y/n) ? ")
@@ -93,6 +98,7 @@ class AngularMomentum(LinearMomentum):
         if store == 'y':
             LinearMomentum.p.append(L_vec)
             print("Momentum instance stored as number:", len(LinearMomentum.p))
+        return L_vec
 
 
 def menu():
