@@ -33,6 +33,13 @@ class TwoDimensions:
             TwoDimensions.magnitudeGivenAngle(TwoDimensions())
         print('Vector magnitude = ', "%.2f" %v)
 
+    def angleBetween(self):
+        vx = float(input("Vector x-component > "))
+        vy = float(input("Vector y-component > "))
+        theta = math.degrees(math.atan(vy / vx))
+        print("Angle between x-component and y-component: ", "%.2f" % theta, "Degrees")
+        return theta
+
 
 class ThreeDimensions:
 
@@ -53,6 +60,7 @@ class ThreeDimensions:
         vz = float(input('z - component > '))
         v  = math.sqrt(vx*vx + vy*vy + vz*vz)
         print('Magnitude =', "%.2f" %v)
+        return v
 
     def magnitudeGivenAngle(self):
         vc    = float(input('Component value > '))
@@ -70,11 +78,13 @@ class ThreeDimensions:
             print('Direction input error!')
             ThreeDimensions.magnitudeGivenAngle(ThreeDimensions())
         print('Vector magnitude = ', "%.2f" %v)
+        return v
 
 
 twod_commands = {"components": TwoDimensions.components,
                  "magnitude given components": TwoDimensions.magnitudeGivenComponents,
-                 "magnitude given angle": TwoDimensions.magnitudeGivenAngle}
+                 "magnitude given angle": TwoDimensions.magnitudeGivenAngle,
+                 "angle between components": TwoDimensions.angleBetween}
 
 threed_commands = {"components": ThreeDimensions.components,
                    "magnitude given components": ThreeDimensions.magnitudeGivenComponents,
@@ -86,6 +96,7 @@ def help():
     print("> components")
     print("> magnitude given components")
     print("> magnitude given angle")
+    print("> angle between components")
     menu()
 
 
@@ -112,6 +123,7 @@ def menu():
     else:
         print("invalid dimensions entry!")
         menu()
+    menu()
 
 
 menu()
