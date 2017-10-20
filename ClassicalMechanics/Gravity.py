@@ -6,20 +6,27 @@ class Gravity:
     def GraviationalForce(self, r, m):
         F = (Gravity.G*Gravity.Me*m)/((r+Gravity.Re)**2)
         print('Gravitational Force = ', "%.2f" %F, 'N')
+        return F
 
     def GravitationalPotential(self, r, m):
         U = (Gravity.G*Gravity.Me*m)/(r+Gravity.Re)
         print('Gravitational Potential Energy = ', "%.2f" %U, 'J')
+        return U
 
 
-print('[1] - Graviational Force')
-print('[2] - Gravitational Potential Energy')
-select = int(input('Select an option > '))
 
-distance = float(input('Distance from earth surface > '))
-mass     = float(input('Mass of the object > '))
+def menu():
+    print('[1] - Graviational Force')
+    print('[2] - Gravitational Potential Energy')
+    select = int(input('Select an option > '))
 
-if select == 1:
-    Gravity.GraviationalForce(Gravity(), distance, mass)
-elif select == 2:
-    Gravity.GravitationalPotential(Gravity(), distance, mass)
+    distance = float(input('Distance from earth surface > '))
+    mass = float(input('Mass of the object > '))
+
+    if select == 1:
+        Gravity.GraviationalForce(Gravity(), distance, mass)
+    elif select == 2:
+        Gravity.GravitationalPotential(Gravity(), distance, mass)
+    menu()
+
+menu()
