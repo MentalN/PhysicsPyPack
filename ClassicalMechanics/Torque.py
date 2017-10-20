@@ -11,6 +11,7 @@ class Torque:
         angle = float(input("Angle force is applied at from the lever arm in degrees > "))
         tm = r * F * math.sin(math.radians(angle))
         print("Magnitude of torque =", "%.2f" %tm)
+        return tm
 
     def TorqueVector(self):
         print("Position vector from the point where the force is applied:")
@@ -27,6 +28,7 @@ class Torque:
         tm = numpy.linalg.norm(t)
         print("Torque vector: ", t)
         print("Magnitude of torque =", "%.2f" %tm)
+        return tm
 
 
 def menu():
