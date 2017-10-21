@@ -2,7 +2,8 @@ import math
 
 
 class AngularVelocity:
-#   Storing ang velocity instances
+
+#   storing anguar velocity instances
     omega = []
 
     def ang_velocity_position(self):
@@ -13,7 +14,7 @@ class AngularVelocity:
         print("Angular velocity w =", "%.2f" % w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(v)
+            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
@@ -24,7 +25,7 @@ class AngularVelocity:
         print("Angular velocity w =",  "%.2f" %w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(v)
+            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
@@ -34,7 +35,7 @@ class AngularVelocity:
         print("Angular velocity w =",  "%.2f" %w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(v)
+            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
@@ -46,7 +47,7 @@ class AngularVelocity:
         print("Angular velocity w =", "%.2f" % w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(v)
+            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
@@ -58,11 +59,21 @@ class AngularVelocity:
         print("Angular velocity w =", "%.2f" % w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(v)
+            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
-
+    def ang_velocity_acceleration_position(self):
+        wi = float(input("Initial angular velocity > "))
+        a  = float(input("angular acceleration > "))
+        dt = float(input("Change in position > "))
+        w  = math.sqrt(wi*wi + 2 * a * dt)
+        print("Angular velocity w =", "%.2f" % w, "rad/s")
+        store = input("Store this angular velocity instance (y/n)? ")
+        if store == 'y':
+            AngularVelocity.omega.append(w)
+            print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
+        return w
 
 
 
