@@ -2,7 +2,7 @@ import math
 
 
 class AngularVelocity:
-
+#   Storing ang velocity instances
     omega = []
 
     def ang_velocity_position(self):
