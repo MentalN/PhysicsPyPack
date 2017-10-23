@@ -3,7 +3,6 @@ import math
 
 class AngularVelocity:
 
-#   storing anguar velocity instances
     omega = []
 
     def ang_velocity_position(self):
@@ -39,7 +38,7 @@ class AngularVelocity:
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
 
-    def ang_velocity_arc_length(selfs):
+    def ang_velocity_arc_length(self):
         s  = float(input("Length of arc > "))
         r  = float(input("radius > "))
         dt = float(input("Change in time > "))
@@ -71,9 +70,11 @@ class AngularVelocity:
         print("Angular velocity w =", "%.2f" % w, "rad/s")
         store = input("Store this angular velocity instance (y/n)? ")
         if store == 'y':
-            AngularVelocity.omega.append(w)
             print("Angular velocity instance stored as number:", len(AngularVelocity.omega))
         return w
+
+
+def menu():
 
 
 
