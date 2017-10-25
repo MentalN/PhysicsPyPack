@@ -1,5 +1,4 @@
 import math
-import menu
 
 
 class AngularVelocity:
@@ -75,8 +74,37 @@ class AngularVelocity:
         return w
 
 
+def ang_velocity_menu():
+    print("Given variable? ")
+    print("[1] - Position")
+    print("[2] - Tangential velocity")
+    print("[3} - Frequency")
+    print("[4} - Arc length")
+    print("[5} - Acceleration")
+    select = int(input("Enter choice number 1-5 > "))
+    if select == 1:
+        AngularVelocity.ang_velocity_position(AngularVelocity())
+    elif select == 2:
+        AngularVelocity.ang_velocity_tangential(AngularVelocity())
+    elif select == 3:
+        AngularVelocity.ang_velocity_frequency(AngularVelocity())
+    elif select == 4:
+        AngularVelocity.ang_velocity_arc_length(AngularVelocity())
+    elif select == 5:
+        print("Second variable? ")
+        print("[1] - Time")
+        print("[2] - Position")
+        select2 = int(input("Enter choice (1/2) > "))
+        if select2 == 1:
+            AngularVelocity.ang_velocity_acceleration_time(AngularVelocity())
+        elif select2 == 2:
+            AngularVelocity.ang_velocity_acceleration_position(AngularVelocity())
+        else:
+            print("Invalid entry!")
+    else:
+        print("Invalid entry!")
+    ang_velocity_menu()
 
 
-
-
+ang_velocity_menu()
 
