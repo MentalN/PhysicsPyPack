@@ -29,4 +29,5 @@ def menu():
         Gravity.GravitationalPotential(Gravity(), distance, mass)
     menu()
 
+    
 menu()
