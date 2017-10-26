@@ -79,4 +79,5 @@ def menu():
     print('__________________\n')
     menu()
 
-menu()
+#   in order for scripts that depends on this script to work, menu() must be commented out
+#   menu()
