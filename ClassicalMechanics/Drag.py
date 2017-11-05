@@ -9,7 +9,7 @@ class Drag:
 
     def drag(self):
         A  = float(input("Reference area > "))
-        p  = input("medium density. To use stored instance type 'stored'. To calculate it type 'calc' > ")
+        p  = input("medium density. To use stored instance type 'stored'. To calculate it instead type 'calc' > ")
         try:
             float(p)
         except ValueError:
@@ -22,7 +22,7 @@ class Drag:
                 print("Invalid entry!")
                 self.drag()
         v  = float(input("Velocity > "))
-        cd = input("Drag coefficient, to use table type 'shape' > ")
+        cd = input("Drag coefficient, to use 'cd' table type 'shape' > ")
         try:
             float(cd)
         except ValueError:
