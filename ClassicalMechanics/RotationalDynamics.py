@@ -174,7 +174,3 @@ def ang_velocity_menu():
     else:
         print("Invalid entry!")
     ang_velocity_menu()
-
-
-ang_velocity_menu()
-
