@@ -3,40 +3,62 @@ class Galilean:
     xg = 0
     yg = 0
     zg = 0
+    coords = []
 
-    def inquiry(self):
+    def transform_coordinates(self):
+#       transform x-coordinates
         x_switch = input('Frame moving in x-direction (y/n)? ')
         if x_switch == 'y':
-            Galilean.xTransform(Galilean())
+            self.x_transform()
+        elif x_switch == 'n':
+            self.xg = float(input("x-coordinates > "))
+        else:
+            print("Invalid entry!")
+            self.transform_coordinates()
+
+#       transform y-coordinates
         y_switch = input('Frame moving in y-direction (y/n)? ')
         if y_switch == 'y':
-            Galilean.yTransform(Galilean())
+            self.y_transform()
+        elif y_switch == 'n':
+            self.yg = float(input("y-coordinates > "))
+        else:
+            print("Invalid entry!")
+            self.transform_coordinates()
+
+#       transform z-coordinates
         z_switch = input('Frame moving in z-direction (y/n)? ')
         if z_switch == 'y':
-            Galilean.zTransform(Galilean())
-        Galilean.printNewCoords(Galilean())
+            self.z_transform()
+        elif z_switch == 'n':
+            self.zg = float(input("z-coordinates > "))
+        else:
+            print("Invalid entry!")
+            self.transform_coordinates()
 
-    def xTransform(self):
+#       print and store new coordinates
+        new_coords = [self.xg, self.yg, self.zg]
+        print("Transformed coordinates =", new_coords)
+        store = input("Store this new coordinates instance? (y/n) ")
+        if store == 'y':
+            self.coords.append(new_coords)
+            print("Coordinates instance stored as number [", len(self.coords), "]")
+
+    def x_transform(self):
         x  = float(input("x-coordinate > "))
         u  = float(input("Velocity of the frame > "))
         t  = float(input("Time > "))
-        Galilean.xg = x - u * t
+        self.xg = x - u * t
 
-    def yTransform(self):
+    def y_transform(self):
         y  = float(input("y-coordinate > "))
         u  = float(input("Velocity of the frame > "))
         t  = float(input("Time > "))
-        Galilean.yg = y - u * t
+        self.yg = y - u * t
 
-    def zTransform(self):
+    def z_transform(self):
         z  = float(input("z-coordinate > "))
         u  = float(input("Velocity of the frame > "))
         t  = float(input("Time > "))
-        Galilean.zg = z - u * t
+        self.zg = z - u * t
 
-    def printNewCoords(self):
-        print("Transformed coords:(", "%.2f" %Galilean.xg, ", ", "%.2f" %Galilean.yg, ", ", "%.2f" %Galilean.zg, ")")
-        print("Time t is absolute, no transform necessary.")
-
-
-Galilean.inquiry(Galilean())
