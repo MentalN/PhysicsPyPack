@@ -5,15 +5,22 @@ import numpy
 
 class Torque:
 
-    def TorqueMagnitude(self):
+    t = []
+    t_mag = []
+
+    def torque_magnitude(self):
         r = float(input("Distance from axis of rotation > "))
         F = float(input("Magnitude of force applied     > "))
         angle = float(input("Angle force is applied at from the lever arm in degrees > "))
         tm = r * F * math.sin(math.radians(angle))
-        print("Magnitude of torque =", "%.2f" %tm)
+        print("Magnitude of torque =", "%.2f" % tm)
+        store = input("Store this torque magnitude instant? (y/n) ")
+        if store == 'y':
+            self.t_mag.append(tm)
+            print("Torque instant stored as number [", len(self.t_mag), "]")
         return tm
 
-    def TorqueVector(self):
+    def torque_vector(self):
         print("Position vector from the point where the force is applied:")
         rx = float(input("X-component > "))
         ry = float(input("y-component > "))
@@ -27,8 +34,12 @@ class Torque:
         t = numpy.cross(r, F)
         tm = numpy.linalg.norm(t)
         print("Torque vector: ", t)
-        print("Magnitude of torque =", "%.2f" %tm)
-        return tm
+        print("Magnitude of torque =", "%.2f" % tm)
+        store = input("Store this torque vector instance? (y/n) ")
+        if store == 'y':
+            self.t.append(t)
+            print("Torque instance stored as number [", len(self.t), "]")
+        return t
 
 
 def menu():
@@ -37,13 +48,12 @@ def menu():
     option = int(input('Select an option > '))
 
     if option == 1:
-        Torque.TorqueMagnitude(Torque())
+        Torque.torque_magnitude(Torque())
     elif option == 2:
-        Torque.TorqueVector(Torque())
+        Torque.torque_vector(Torque())
     else:
         print("Invalid Entry!")
 
     menu()
 
 
-menu()
