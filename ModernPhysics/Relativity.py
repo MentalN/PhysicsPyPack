@@ -1,7 +1,7 @@
 import math
 
 
-class Relativistic:
+class Effects:
     c = 299792458
 
     time = []
@@ -40,5 +40,35 @@ class Relativistic:
             self.mass.append(L)
             print("Instance stored as number [", len(self.length), "]")
         return L
+
+
+class Doppler(Effects):
+
+    frequency = []
+    wavelength = []
+
+    def frequency_shift(self):
+        fo = float(input("Frequency of the source > "))
+        u  = float(input("Velocity of the source > "))
+        b = u/self.c
+        f = fo * math.sqrt((1-b)/(1+b))
+        print("Observed frequency f' =", f)
+        store = input("Store this frequency instance? (y/n) ")
+        if store == 'y':
+            self.frequency.append(f)
+            print("Instance stored as number [", len(self.frequency), "]")
+        return f
+
+    def wavelength_shift(self):
+        wo = float(input("Wavelength of the source > "))
+        u  = float(input("Velocity of the source > "))
+        b = u/self.c
+        w = wo * math.sqrt((1+b)/(1-b))
+        print("Observed wavelength Lambda' =", w)
+        store = input("Store this frequency instance? (y/n) ")
+        if store == 'y':
+            self.wavelength.append(w)
+            print("Instance stored as number [", len(self.wavelength), "]")
+        return w
 
 
