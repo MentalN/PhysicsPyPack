@@ -68,7 +68,7 @@ class Energy(Essentials):
             if m in self.particles:
                 m = self.particles[m]
             else:
-                print("invalid entry")
+                print("invalid entry!")
                 self.rest_energy()
         v = float(input("Velocity > "))
         Eo = m * self.c ** 2
@@ -82,4 +82,21 @@ class Energy(Essentials):
         return K
 
     def relativistic_total_energy(self):
-        
+        m = input("Mass > ")
+        try:
+            float(m)
+        except ValueError:
+            if m in self.particles:
+                m = self.particles[m]
+            else:
+                print("invalid entry!")
+                self.rest_energy()
+        v = float(input("Velocity > "))
+        b = v / self.c
+        Etot = ((m * self.c ** 2) / math.sqrt(1 - b ** 2))
+        print("Relativistic total energy Etot =", Etot, "J")
+        store = input("Store this energy instance? (y/n) ")
+        if store == 'y':
+            self.Etot.append(Etot)
+            print("Instance stored as number [", len(self.Etot), "]")
+        return Etot
