@@ -40,6 +40,7 @@ class Energy(Essentials):
 
     Eo = []
     K = []
+    Etot = []
 
     def rest_energy(self):
         m = input("Mass > ")
@@ -79,5 +80,6 @@ class Energy(Essentials):
             self.K.append(K)
             print("Instance stored as number [", len(self.K), "]")
         return K
-    
-    
+
+    def relativistic_total_energy(self):
+        
