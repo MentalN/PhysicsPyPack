@@ -66,5 +66,7 @@ class Photon(Essentials):
             print("Instance stored as number [", len(self.P_photon), "]")
         return P
 
+        
+
 
 
