@@ -1,5 +1,6 @@
 import math
 
+
 class Essentials:
 
     c = 299792458
@@ -11,6 +12,7 @@ class Photon(Essentials):
 
     E_photon = []
     P_photon = []
+    freq = []
 
     def energy(self):
         print("[1} - given frequency > ")
@@ -66,7 +68,26 @@ class Photon(Essentials):
             print("Instance stored as number [", len(self.P_photon), "]")
         return P
 
-        
+    def threshold(self):
+        w = input("Value of work function, or enter element symbol > ")
+        try:
+            float(w)
+        except ValueError:
+            w = self.work_function(w)
+        fo = w/self.h
+        lo = self.h*self.c/w
+        print("Threshold frequency =", fo)
+        print("Corresponding wavelength =", lo)
+        store = input("Store this frequency instance? (y/n) ")
+        if store == 'y':
+            self.freq.append(fo)
+            print("Instance stored as number [", len(self.freq), "]")
+        return fo
 
-
-
+    def work_function(self, wf):
+        work_func = {"Al": 4.08, "Be": 5.00, "Cd": 4.07, "Ca": 2.90, "C" : 4.81,
+                     "Cs": 2.10, "Co": 5.00, "Cu": 4.70, "Au": 5.10, "Fe": 4.50,
+                     "Pb": 4.14, "Mg": 3.68, "Hg": 4.50, "Ni": 5.01, "Nb": 4.30,
+                     "K" : 2.30, "Pt": 6.35, "Se": 5.11, "Ag": 4.26, "Na": 2.28,
+                     "U" : 3.60, "Zn": 4.30}
+        return work_func[wf]
