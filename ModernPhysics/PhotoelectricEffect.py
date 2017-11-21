@@ -1,11 +1,4 @@
-import math
-
-
-class Essentials:
-
-    c = 299792458
-    h = 6.62607004e-34
-    h_bar = 1.05457180e-34
+from Essentials import Essentials
 
 
 class Photon(Essentials):
@@ -91,3 +84,21 @@ class Photon(Essentials):
                      "K" : 2.30, "Pt": 6.35, "Se": 5.11, "Ag": 4.26, "Na": 2.28,
                      "U" : 3.60, "Zn": 4.30}
         return work_func[wf]
+
+    def excess_energy(self):
+        print("Excess energy as kinetic energy")
+        w = input("Value of work function, or enter element symbol > ")
+        try:
+            float(w)
+        except ValueError:
+            w = self.work_function(w)
+        f = input("Frequency, type 'store' to use a stored instance> ")
+        try:
+            float(f)
+        except ValueError:
+            if f == 'store':
+                num_f = int(input("Number of stored instance > "))
+                f = self.freq[num_f]
+        k = self.h*f - w
+        print("Excess energy K =", k)
+        return k
