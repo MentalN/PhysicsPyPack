@@ -1,4 +1,4 @@
-from PhotoelectricEffect import Essentials
+from Essentials import Essentials
 
 
 class TRadiation(Essentials):
