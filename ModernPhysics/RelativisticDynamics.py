@@ -1,7 +1,7 @@
 import math
 
 
-class Essentials:
+class Basics:
 
     c = 299792458
 
@@ -11,7 +11,7 @@ class Essentials:
                  "amu": 1.660540 * 10**-27}
 
 
-class Momentum(Essentials):
+class Momentum(Basics):
 
     p = []
 
