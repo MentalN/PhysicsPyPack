@@ -1,8 +1,8 @@
+from Essentials import Essentials
 import math
 
 
-class Effects:
-    c = 299792458
+class Effects(Essentials):
 
     time = []
     mass = []
