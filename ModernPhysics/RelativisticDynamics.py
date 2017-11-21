@@ -1,17 +1,8 @@
 import math
+from Essentials import Essentials
 
 
-class Basics:
-
-    c = 299792458
-
-    particles = {"proton": 1.672722 * 10**-27,
-                 "electron": 9.109384 * 10**-31,
-                 "neutron": 1.674929 * 10**-27,
-                 "amu": 1.660540 * 10**-27}
-
-
-class Momentum(Basics):
+class Momentum(Essentials):
 
     p = []
 
