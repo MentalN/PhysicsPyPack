@@ -1,5 +1,5 @@
 import math
-from Essentials import Essentials
+from ModernPhysics.Essentials import Essentials
 
 
 class Momentum(Essentials):

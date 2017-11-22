@@ -10,7 +10,7 @@ class LinearMomentum:
         m = float(input("Mass of object > "))
         v = float(input("Velocity of object > "))
         p_mag = m * v
-        print("Momentum magnitude P = ", "%.2f" % p_mag)
+        print("Momentum magnitude P = ", p_mag)
         store = input("Store this momentum instance (y/n)? ")
         if store == 'y':
             LinearMomentum.p.append(p_mag)
@@ -119,6 +119,3 @@ def menu():
     elif select == 5:
         AngularMomentum.L_vector(AngularMomentum())
     menu()
-
-
-menu()

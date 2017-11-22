@@ -1,4 +1,4 @@
-from Essentials import Essentials
+from ModernPhysics.Essentials import Essentials
 
 
 class TRadiation(Essentials):

@@ -1,6 +1,6 @@
 import math
 import itertools
-from KinematicEquations import Velocity, Distance
+from ClassicalMechanics.KinematicEquations import Velocity, Distance
 from prettytable import PrettyTable
 
 
