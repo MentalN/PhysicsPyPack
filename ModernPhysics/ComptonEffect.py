@@ -39,4 +39,6 @@ class Compton(Essentials):
             self.compton_angle.append(theta)
             print("Instance stored as number", len(self.compton_angle))
         return theta
-
+    
+#    def scattered_direction(self):
+#    P89 Example 3.7 part d
