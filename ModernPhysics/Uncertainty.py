@@ -6,6 +6,7 @@ class Heisenberg(LinearMomentum, Essentials):
 
     dx_list = []
     dp_list = []
+    de_list = []
 
     def position_uncertainty(self):
         dp = input("Momentum. Or to calculate it, type 'calc' > ")
@@ -43,3 +44,14 @@ class Heisenberg(LinearMomentum, Essentials):
             self.dp_list.append(dp)
             print("Instance stored as number ", len(self.dp_list))
         return dp
+
+    def energy_uncertainty(self):
+        dt = float("Life time in nanoseconds > ")
+        dt = dt*10**-9
+        de = self.h_bar/dt
+        print("Uncertainty in energy = ", de)
+        store = input("Store this uncertainty instance? (y/n) ")
+        if store == 'y':
+            self.dp_list.append(de)
+            print("Instance stored as number ", len(self.de_list))
+        return de
