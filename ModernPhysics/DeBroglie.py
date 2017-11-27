@@ -23,6 +23,3 @@ class Wavelength(Essentials, LinearMomentum):
             self.deBroglie.append(d_w)
             print("Instance stored as number", len(self.deBroglie))
         return d_w
-
-
-Wavelength.deBroglie_wavelength(Wavelength())
