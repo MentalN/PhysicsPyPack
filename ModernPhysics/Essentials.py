@@ -3,6 +3,7 @@ class Essentials:
     c = 299792458
     h = 6.62607004e-34
     h_bar = 1.05457180e-34
+    pi = 3.14159265359
 
     particles = {"proton": 1.672722 * 10**-27,
                  "electron": 9.109384 * 10**-31,
