@@ -1,7 +1,7 @@
 from ModernPhysics.Essentials import Essentials
 
 
-class EnergyWell(Essentials):
+class OneDWell(Essentials):
 
     E_n = []
 
@@ -27,5 +27,6 @@ class EnergyWell(Essentials):
             print("Instance stored as number ", len(self.E_n))
 
 
-EnergyWell.energy_infinite_potential_well(EnergyWell())
+
+
 
