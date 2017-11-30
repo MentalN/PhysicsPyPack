@@ -86,9 +86,19 @@ class Atom(Essentials):
             print("Instance stored as number ", len(self.A_dE))
         return dE
 
+    def transition_wavelength(self):
+        print("Wavelength of transition from state ni to nf of non-Hydrogen atom")
+        atom_name = input("Name of the atom > ")
+        atom = element(atom_name)
+        ni = int(input("Transitioning from energy state > "))
+        nf = int(input("To energy state > "))
+        dE = -13.60*(atom.atomic**2)*((1/ni**2)-(1/nf**2))
+        l = self.h*self.c/dE
+        print("Transition wavelength l =", l)
+        store = input("Store this wavelength instance? (y/n) ")
+        if store == 'Y':
+            self.A_wavelength.append(l)
+            print("Instance stored as number ", len(self.A_wavelength))
+        return l
 
-
-
-
-Atom.energy_levels(Atom())
 
