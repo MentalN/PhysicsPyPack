@@ -58,7 +58,7 @@ class Atom(Essentials):
     def energy_levels(self):
         print("Calculating energy levels of atom with (Z > 1)")
         n = int(input("Energy level > "))
-        atom_name = input("Name of the ionized atom > ")
+        atom_name = input("Name of the atom > ")
         atom = element(atom_name)
         En = -13.60*(atom.atomic**2)/(n*n)
         print(atom.name, " Energy of state number", n, "is E =", En, " eV")
@@ -68,5 +68,27 @@ class Atom(Essentials):
             print("Instance stored as number ", len(self.A_En))
         return En
 
+    def transition_energy(self):
+        print("Energy of the transition from state ni to nf of non-hydrogen atom")
+        atom_name = input("Name of the atom > ")
+        atom = element(atom_name)
+        ni = int(input("Transitioning from energy state > "))
+        nf = int(input("To energy state > "))
+        dE = -13.60*(atom.atomic**2)*((1/ni**2)-(1/nf**2))
+        if dE > 0:
+            dE_str = "Absorbed"
+        elif dE < 0:
+            dE_str = "Given off"
+        print("Transition energy dE = ", dE, " eV ", dE_str)
+        store = input("Store this energy instance? (y/n) ")
+        if store == 'y':
+            self.A_dE.append(dE)
+            print("Instance stored as number ", len(self.A_dE))
+        return dE
+
+
+
+
 
 Atom.energy_levels(Atom())
+
