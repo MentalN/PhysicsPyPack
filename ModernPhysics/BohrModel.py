@@ -1,11 +1,12 @@
 from ModernPhysics.Essentials import Essentials
+from periodic.table import element
 
 
 class Hydrogen(Essentials):
 
-    wavelength = []
-    En = []
-    dE = []
+    H_wavelength = []
+    H_En = []
+    H_dE = []
 
     def energy_levels(self):
         print("Calculating energy levels of the hydrogen atom")
@@ -14,8 +15,8 @@ class Hydrogen(Essentials):
         print("Energy of state number", n, "is E =", En, " eV")
         store = input("Store this energy instance? (y/n) ")
         if store == 'y':
-            self.En.append(self.En)
-            print("Instance stored as number ", len(self.En))
+            self.H_En.append(self.H_En)
+            print("Instance stored as number ", len(self.H_En))
         return En
 
     def transition_wavelength(self):
@@ -26,8 +27,8 @@ class Hydrogen(Essentials):
         print("Transition wavelength l =", l)
         store = input("Store this wavelength instance? (y/n) ")
         if store == 'Y':
-            self.wavelength.append(l)
-            print("Instance stored as number ", len(self.wavelength))
+            self.H_wavelength.append(l)
+            print("Instance stored as number ", len(self.H_wavelength))
         return l
 
     def transition_energy(self):
@@ -43,6 +44,29 @@ class Hydrogen(Essentials):
         print("Transition energy dE = ", dE, " ", dE_str)
         store = input("Store this energy instance? (y/n) ")
         if store == 'y':
-            self.dE.append(dE)
-            print("Instance stored as number ", len(self.dE))
+            self.H_dE.append(dE)
+            print("Instance stored as number ", len(self.H_dE))
         return dE
+
+
+class Atom(Essentials):
+
+    A_wavelength = []
+    A_En = []
+    A_dE = []
+
+    def energy_levels(self):
+        print("Calculating energy levels of atom with (Z > 1)")
+        n = int(input("Energy level > "))
+        atom_name = input("Name of the ionized atom > ")
+        atom = element(atom_name)
+        En = -13.60*(atom.atomic**2)/(n*n)
+        print(atom.name, " Energy of state number", n, "is E =", En, " eV")
+        store = input("Store this energy instance? (y/n) ")
+        if store == 'y':
+            self.A_En.append(self.A_En)
+            print("Instance stored as number ", len(self.A_En))
+        return En
+
+
+Atom.energy_levels(Atom())
