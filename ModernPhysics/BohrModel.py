@@ -30,4 +30,19 @@ class Hydrogen(Essentials):
             print("Instance stored as number ", len(self.wavelength))
         return l
 
-
+    def transition_energy(self):
+        print("Energy of the transition from state ni to nf")
+        ni = int(input("Transitioning from energy state > "))
+        nf = int(input("To energy state > "))
+        l = (1/self.R)*(ni*ni*nf*nf/(ni**2-nf**2))
+        dE = self.h*self.c/l
+        if dE > 0:
+            dE_str = "Absorbed"
+        elif dE < 0:
+            dE_str = "Given off"
+        print("Transition energy dE = ", dE, " ", dE_str)
+        store = input("Store this energy instance? (y/n) ")
+        if store == 'y':
+            self.dE.append(dE)
+            print("Instance stored as number ", len(self.dE))
+        return dE
