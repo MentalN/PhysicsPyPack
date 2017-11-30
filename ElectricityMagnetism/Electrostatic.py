@@ -46,7 +46,7 @@ class Coulomb(Essentials):
         if select == 'y':
             self.U.append(U)
             print("Instance stored as number [", len(self.U), "]")
-        return
+        return U
 
 
 
