@@ -1,6 +1,8 @@
-class Coulomb:
+from ElectricityMagnetism.Essentials import Essentials
 
-    k = 8.99 * 10 ** 9
+
+class Coulomb(Essentials):
+
     F = []
     U = []
 
@@ -44,7 +46,11 @@ class Coulomb:
         if select == 'y':
             self.U.append(U)
             print("Instance stored as number [", len(self.U), "]")
-        return U
+        return
+
+
+
+
 
 
 
