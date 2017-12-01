@@ -5,6 +5,7 @@ class Coulomb(Essentials):
 
     F = []
     U = []
+    E_p = []
 
     def coulomb_electrostatic_force(self):
         q_1 = float(input("Charge of the first particle > "))
@@ -48,10 +49,14 @@ class Coulomb(Essentials):
             print("Instance stored as number [", len(self.U), "]")
         return U
 
-
-
-
-
-
-
+    def electric_field_point_charge(self):
+        q = float(input("Charge of the particle > "))
+        r = float(input("Distance from point charge > "))
+        E = self.k*q/r**2
+        print("Electric field of point charge E =", E)
+        store = input("Store this electric field instance? (y/n) ")
+        if store == 'y':
+            self.E_p.append(E)
+            print("Instance stored as number ", len(self.E_p))
+        return E
 
