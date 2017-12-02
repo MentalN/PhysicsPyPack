@@ -42,6 +42,7 @@ class Capacitor(Essentials):
         if store == 'y':
             self.C.append(C)
             print("Instance store as number ", len(self.C))
+        return C
 
     def given_area_distance(self):
         self.A = float(self.A)
@@ -52,5 +53,6 @@ class Capacitor(Essentials):
         if store == 'y':
             self.C.append(C)
             print("Instance store as number ", len(self.C))
+        return C
 
 
