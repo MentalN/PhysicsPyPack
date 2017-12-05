@@ -285,3 +285,101 @@ class Current:
             self.I.append(I)
             print("Instance stored as number ", len(self.I))
         return I
+
+
+class Resistance:
+
+    R = []
+    P = 0
+    I = 0
+    V = 0
+
+    def __init__(self):
+        print("Enter given variables (Case sensitive): ")
+        print("Power (P) ")
+        print("Current (I) ")
+        print("Voltage (V) ")
+        var_input = input("> ")
+        if var_input == 'P':
+            print("Enter second variable: ")
+            print("Current (I) ")
+            print("Voltage (V) ")
+            var_input = input("> ")
+            if var_input == 'I':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
+                self.given_power_current()
+            elif var_input == 'V':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
+                self.given_voltage_power()
+        elif var_input == 'I':
+            print("Enter second variable: ")
+            print("Power (P) ")
+            print("Voltage (V) ")
+            var_input = input("> ")
+            if var_input == 'P':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
+                self.given_power_current()
+            elif var_input == 'V':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
+                self.given_voltage_current()
+        elif var_input == 'V':
+            print("Enter second variable: ")
+            print("Power (P) ")
+            print("Current (I) ")
+            var_input = input("> ")
+            if var_input == 'P':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
+                self.given_voltage_power()
+            elif var_input == 'I':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
+                self.given_voltage_current()
+        else:
+            print("Invalid Entry!")
+            self.__init__()
+
+
+    def given_voltage_current(self):
+        self.V = float(self.V)
+        self.I = float(self.I)
+        R = self.V/self.I
+        print("Resistance R =", R)
+        store = input("Store resistance instance? (y/n) ")
+        if store == 'y':
+            self.R.append(R)
+            print("Instance stored as number ", len(self.R))
+        return R
+
+    def given_power_current(self):
+        self.P = float(self.P)
+        self.I = float(self.I)
+        R = self.P**2/self.I
+        print("Resistance R =", R)
+        store = input("Store resistance instance? (y/n) ")
+        if store == 'y':
+            self.R.append(R)
+            print("Instance stored as number ", len(self.R))
+        return R
+
+    def given_voltage_power(self):
+        self.V = float(self.V)
+        self.P = float(self.P)
+        R = self.V**2/self.P
+        print("Resistance R =", R)
+        store = input("Store resistance instance? (y/n) ")
+        if store == 'y':
+            self.R.append(R)
+            print("Instance stored as number ", len(self.R))
+        return R
+
