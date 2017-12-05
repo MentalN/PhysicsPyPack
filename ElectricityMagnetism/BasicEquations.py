@@ -191,3 +191,47 @@ class Voltage:
         return V
 
 
+class Current:
+
+    I = []
+    P = 0
+    R = 0
+    V = 0
+
+    def __init__(self):
+
+
+
+
+    def given_power_resistnace(self):
+        self.P = float(self.P)
+        self.R = float(self.R)
+        I = sqrt(self.P/self.R)
+        print("Current I =", I)
+        store = input("Store voltage instance? (y/n) ")
+        if store == 'y':
+            self.I.append(I)
+            print("Instance stored as number ", len(self.I))
+        return I
+
+    def given_power_voltage(self):
+        self.P = float(self.P)
+        self.V = float(self.V)
+        I = self.P/self.V
+        print("Current I =", I)
+        store = input("Store voltage instance? (y/n) ")
+        if store == 'y':
+            self.I.append(I)
+            print("Instance stored as number ", len(self.I))
+        return I
+
+    def given_voltage_resistance(self):
+        self.V = float(self.V)
+        self.R = float(self.R)
+        I = self.V/self.R
+        print("Current I =", I)
+        store = input("Store voltage instance? (y/n) ")
+        if store == 'y':
+            self.I.append(I)
+            print("Instance stored as number ", len(self.I))
+        return I
