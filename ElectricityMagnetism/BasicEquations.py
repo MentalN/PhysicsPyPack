@@ -9,6 +9,7 @@ class Power:
     R = 0
 
     def __init__(self):
+        print("Power Equations")
         print("Enter given variables (Case sensitive): ")
         print("Voltage (V) ")
         print("Resistance (R) ")
@@ -20,11 +21,17 @@ class Power:
             print("Current (I) ")
             var_input = input("> ")
             if var_input == 'R':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
                 self.given_voltage_resistance()
             elif var_input == 'I':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.I = input("Enter Current value > ")
                 if self.I == 'back':
                     self.__init__()
@@ -35,11 +42,17 @@ class Power:
             print("Voltage (V) ")
             var_input = input("> ")
             if var_input == 'I':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.I = input("Enter current value > ")
                 if self.I == 'back':
                     self.__init__()
                 self.given_current_resistance()
             elif var_input == 'V':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -49,11 +62,17 @@ class Power:
             print("Resistance (R) ")
             print("Voltage (V) ")
             if var_input == 'R':
+                self.I = input("Enter Current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
                 self.given_current_resistance()
             elif var_input == 'V':
+                self.I = input("Enter Current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -104,6 +123,7 @@ class Voltage:
     I = 0
 
     def __init__(self):
+        print("Voltage Equations")
         print("Enter given variables (Case sensitive): ")
         print("Power (P) ")
         print("Current (I) ")
@@ -115,11 +135,17 @@ class Voltage:
             print("Current (I) ")
             var_input = input("> ")
             if var_input == 'R':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
                 self.given_power_resistance()
             elif var_input == 'I':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.I = input("Enter current value > ")
                 if self.I == 'back':
                     self.__init__()
@@ -130,11 +156,17 @@ class Voltage:
             print("Resistance (R) ")
             var_input = input("> ")
             if var_input == 'P':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
                 self.given_power_current()
             elif var_input == 'R':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
@@ -144,11 +176,17 @@ class Voltage:
             print("Power (P) ")
             print("Current (I) ")
             if var_input == 'P':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
                 self.given_power_resistance()
             elif var_input == 'I':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.I = input("Enter current value > ")
                 if self.I == 'back':
                     self.__init__()
@@ -199,6 +237,7 @@ class Current:
     V = 0
 
     def __init__(self):
+        print("Current Equations")
         print("Enter given variables (Case sensitive): ")
         print("Power (P) ")
         print("Resistance (R) ")
@@ -210,11 +249,17 @@ class Current:
             print("Voltage (V) ")
             var_input = input("> ")
             if var_input == 'R':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
-                self.given_power_resistnace()
+                self.given_power_resistance()
             elif var_input == 'V':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -225,11 +270,17 @@ class Current:
             print("Voltage (V) ")
             var_input = input("> ")
             if var_input == 'P':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
-                self.given_power_resistnace()
+                self.given_power_resistance()
             elif var_input == 'V':
+                self.R = input("Enter Resistance value > ")
+                if self.R == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -240,11 +291,17 @@ class Current:
             print("Resistance (R) ")
             var_input = input("> ")
             if var_input == 'P':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
                 self.given_power_voltage()
             elif var_input == 'R':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.R = input("Enter Resistance value > ")
                 if self.R == 'back':
                     self.__init__()
@@ -253,7 +310,7 @@ class Current:
             print("Invalid Entry!")
             self.__init__()
 
-    def given_power_resistnace(self):
+    def given_power_resistance(self):
         self.P = float(self.P)
         self.R = float(self.R)
         I = sqrt(self.P/self.R)
@@ -295,6 +352,7 @@ class Resistance:
     V = 0
 
     def __init__(self):
+        print("Resistance Equations")
         print("Enter given variables (Case sensitive): ")
         print("Power (P) ")
         print("Current (I) ")
@@ -306,11 +364,17 @@ class Resistance:
             print("Voltage (V) ")
             var_input = input("> ")
             if var_input == 'I':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.I = input("Enter current value > ")
                 if self.I == 'back':
                     self.__init__()
                 self.given_power_current()
             elif var_input == 'V':
+                self.P = input("Enter power value > ")
+                if self.P == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -321,11 +385,17 @@ class Resistance:
             print("Voltage (V) ")
             var_input = input("> ")
             if var_input == 'P':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
                 self.given_power_current()
             elif var_input == 'V':
+                self.I = input("Enter current value > ")
+                if self.I == 'back':
+                    self.__init__()
                 self.V = input("Enter Voltage value > ")
                 if self.V == 'back':
                     self.__init__()
@@ -336,11 +406,17 @@ class Resistance:
             print("Current (I) ")
             var_input = input("> ")
             if var_input == 'P':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.P = input("Enter power value > ")
                 if self.P == 'back':
                     self.__init__()
                 self.given_voltage_power()
             elif var_input == 'I':
+                self.V = input("Enter Voltage value > ")
+                if self.V == 'back':
+                    self.__init__()
                 self.I = input("Enter current value > ")
                 if self.I == 'back':
                     self.__init__()
@@ -348,7 +424,6 @@ class Resistance:
         else:
             print("Invalid Entry!")
             self.__init__()
-
 
     def given_voltage_current(self):
         self.V = float(self.V)
