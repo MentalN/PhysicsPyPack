@@ -2,7 +2,7 @@ from ElectricityMagnetism.Essentials import Essentials
 from ElectricityMagnetism.BasicEquations import Current
 
 
-class Field(Essentials):
+class BField(Essentials):
 
     B = []
 

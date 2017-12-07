@@ -1,7 +1,7 @@
 from ElectricityMagnetism.Essentials import Essentials
 
 
-class Field(Essentials):
+class EField(Essentials):
 
     E = []
     F = 0
