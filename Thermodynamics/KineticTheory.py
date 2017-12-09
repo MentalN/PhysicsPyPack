@@ -1,5 +1,5 @@
 from Thermodynamics.Essentials import Essentials
-
+from math import sqrt
 
 class IdealGas(Essentials):
 
@@ -90,5 +90,33 @@ class IdealGas(Essentials):
             self.T_list.append(T)
             print("Instance stored as number ", len(self.T_list))
         return T
+
+
+class Applications(Essentials):
+
+    KE = []
+    v_rms = []
+
+    def average_KE(self):
+        T = float(input("Enter temperature value > "))
+        KE = 3/2*self.k_J*T
+        print("Average molecular Kinetic energy KE =", KE)
+        store = input("Store this energy instance? (y/n) ")
+        if store == 'y':
+            self.KE.append(KE)
+            print("Instance stored as number ", KE)
+        return KE
+
+    def rms_velocity(self):
+        M = float(input("Molar mass > "))
+        T = float(input("Temperature > "))
+        vrms = sqrt(3*self.R*T/M)
+        print("RMS molecular velocity v =", vrms)
+        store = input("Store this velocity instance? (y/n) ")
+        if store == 'y':
+            self.v_rms.append(vrms)
+            print("Instance stored as number ", len(self.v_rms))
+        return vrms
+
 
 
