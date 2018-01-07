@@ -1,6 +1,7 @@
 from Thermodynamics.Essentials import Essentials
 from math import sqrt
 
+
 class IdealGas(Essentials):
 
     P_list = []
@@ -104,7 +105,7 @@ class Applications(Essentials):
         store = input("Store this energy instance? (y/n) ")
         if store == 'y':
             self.KE.append(KE)
-            print("Instance stored as number ", KE)
+            print("Instance stored as number ", len(KE))
         return KE
 
     def rms_velocity(self):
@@ -117,6 +118,3 @@ class Applications(Essentials):
             self.v_rms.append(vrms)
             print("Instance stored as number ", len(self.v_rms))
         return vrms
-
-
-
